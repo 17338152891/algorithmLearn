@@ -16,8 +16,8 @@ public class TestSortLearn {
     public void init(){
         Random random = new Random();
         datas = new LinkedList<Integer>();
-        for(int i = 0; i < 100000; i++){
-            datas.add(random.nextInt(100000));
+        for(int i = 0; i < 10; i++){
+            datas.add(random.nextInt(10));
         }
         //System.out.println(datas);
     }
@@ -58,5 +58,14 @@ public class TestSortLearn {
         //System.out.println(res);
     }
 
+    @Test
+    public void testSortByInsert(){
+        System.out.println(datas);
+        long start = System.currentTimeMillis();
+        List<Integer> res = SortLearn.sortInsert(datas);
+        long end = System.currentTimeMillis();
+        System.out.println("i ---> " + (end - start));
+        System.out.println(res);
+    }
 
 }

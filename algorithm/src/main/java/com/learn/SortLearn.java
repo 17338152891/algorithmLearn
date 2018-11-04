@@ -2,8 +2,16 @@ package com.learn;
 
 import java.util.*;
 
+/**
+ * 排序类算法学习
+ */
 public class SortLearn {
 
+    /**
+     * 快速排序
+     * @param datas
+     * @return
+     */
     public static List<Integer> sortByQ(List<Integer> datas){
         if(datas.size() == 1){
             return datas;
@@ -31,6 +39,11 @@ public class SortLearn {
         return sortBigs;
     }
 
+    /**
+     * 冒泡排序
+     * @param datas
+     * @return
+     */
     public static List<Integer> sortByM(List<Integer> datas){
         Integer[] toArray = datas.toArray(new Integer[datas.size()]);
         int size = toArray.length;
@@ -48,7 +61,11 @@ public class SortLearn {
     }
 
 
-
+    /**
+     * 归并排序
+     * @param datas
+     * @return
+     */
     public static List<Integer> sortByG(List<Integer> datas){
         if(datas.size() == 1){
             return datas;
@@ -86,6 +103,7 @@ public class SortLearn {
         return hebing;
     }
 
+
     public static List<Integer> hebing(List<Integer> list1, List<Integer> list2){
         Iterator<Integer> iterator = list2.iterator();
         List<Integer> all = new LinkedList<Integer>();
@@ -115,7 +133,37 @@ public class SortLearn {
         return all;
     }
 
+    /**
+     * 插入排序
+     * @param datas
+     * @return
+     */
+    public static List<Integer> sortInsert(List<Integer> datas){
+        // 用来存放插入后的集合
+        LinkedList<Integer> linkedList = new LinkedList<Integer>();
+        // 从原始数据中取
+        for(Integer data : datas){
+            int index = 0;
+            for(Integer i : linkedList) {
+               if(data > i){
+                   break;
+               }
+                index++;
+           }
+           linkedList.add(index, data);
+        }
+        return linkedList;
+    }
 
+    /**
+     *
+     * @param datas
+     * @return
+     */
+    public static List<Integer> sortOo(List<Integer> datas){
+        //todo
+        return null;
+    }
 
 
 }
